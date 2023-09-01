@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (buttonContainer) {
       overlay.removeChild(buttonContainer);
     }
+
+    buttonsVisible = false; // Reset buttonsVisible to false when the overlay is closed
   }
 
   showButtonsButton.addEventListener('click', function () {
@@ -48,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
     buttonsVisible = !buttonsVisible;
   });
 
-  
   closeOverlayButton.addEventListener('click', function () {
     hideOverlay(); 
   });
