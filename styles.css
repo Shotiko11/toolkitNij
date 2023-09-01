@@ -1,0 +1,112 @@
+/* Reset some default styles for the list and anchor tags */
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Style the header and navbar */
+header {
+    background: linear-gradient(to bottom, #2c3e50, #34495e);
+    color: #fff;
+    padding: 20px 0; /* Increased padding for a taller header */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+/* Style the navigation list and items */
+.nav-list {
+    display: flex;
+    width: 100%; /* Make the navigation span the entire width */
+    justify-content: center;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+/* Style the navigation links */
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Add hover effect for the links */
+.nav-item a:hover {
+    background-color: #ff4500; /* Change to your desired hover color */
+    color: #fff;
+}
+
+/* Style the hero section */
+.hero {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 60px 0;
+}
+
+/* Style the big button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #e74c3c;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Add hover effect for the button */
+.cta-button:hover {
+    background-color: #c0392b; /* Change to your desired hover color */
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 100px; /* Set the desired distance between buttons */
+    transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #2980b9; /* Change to your desired hover color */
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+#closeButtonWrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#closeOverlay {
+    font-size: 24px; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
