@@ -1,4 +1,3 @@
-/* Reset some default styles for the list and anchor tags */
 ul, li {
     margin: 0;
     padding: 0;
@@ -6,11 +5,10 @@ ul, li {
     text-decoration: none;
 }
 
-/* Style the header and navbar */
 header {
     background: linear-gradient(to bottom, #2c3e50, #34495e);
     color: #fff;
-    padding: 20px 0; /* Increased padding for a taller header */
+    padding: 20px 0; 
 }
 
 .navbar {
@@ -18,10 +16,9 @@ header {
     justify-content: center;
 }
 
-/* Style the navigation list and items */
 .nav-list {
     display: flex;
-    width: 100%; /* Make the navigation span the entire width */
+    width: 100%; 
     justify-content: center;
 }
 
@@ -29,7 +26,6 @@ header {
     margin-right: 20px;
 }
 
-/* Style the navigation links */
 .nav-item a {
     color: #fff;
     text-decoration: none;
@@ -39,13 +35,11 @@ header {
     transition: background-color 0.3s;
 }
 
-/* Add hover effect for the links */
 .nav-item a:hover {
-    background-color: #ff4500; /* Change to your desired hover color */
+    background-color: #ff4500; 
     color: #fff;
 }
 
-/* Style the hero section */
 .hero {
     background-color: #3498db;
     color: #fff;
@@ -53,7 +47,6 @@ header {
     padding: 60px 0;
 }
 
-/* Style the big button */
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
@@ -65,9 +58,8 @@ header {
     transition: background-color 0.3s;
 }
 
-/* Add hover effect for the button */
 .cta-button:hover {
-    background-color: #c0392b; /* Change to your desired hover color */
+    background-color: #c0392b;
 }
 
 .custom-button {
@@ -78,12 +70,12 @@ header {
     font-size: 18px;
     text-decoration: none;
     border-radius: 5px;
-    margin-right: 100px; /* Set the desired distance between buttons */
+    margin-right: 100px; 
     transition: background-color 0.3s;
 }
 
 .custom-button:hover {
-    background-color: #2980b9; /* Change to your desired hover color */
+    background-color: #2980b9;
 }
 
 #overlay {
@@ -110,3 +102,4 @@ header {
     cursor: pointer;
     color: white;
 }
+
