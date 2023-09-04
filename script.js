@@ -89,7 +89,69 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create a new tooltip for "Close Overlay"
         const closeOverlayText = document.createElement('span');
         closeOverlayText.textContent = tooltips[3]; // Text for "Close Overlay"
-        combinedElement.style.left = 'calc(90% - 33px)';
+
+        // Adjust the left position of the "Close Overlay" tooltip based on screen width
+        const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        if (screenWidth < 768) {
+          combinedElement.style.left = 'calc(90% - 110px)';
+        } else {
+          combinedElement.style.left = 'calc(90% - 33px)';
+        }
+
+        const closeOverlayRectangle = document.createElement('div');
+        closeOverlayRectangle.style.width = '220px';
+        closeOverlayRectangle.style.height = '33px';
+        closeOverlayRectangle.style.backgroundColor = '#F1EEDF';
+        closeOverlayRectangle.style.borderRadius = '10px';
+        closeOverlayRectangle.style.textAlign = 'center';
+        closeOverlayRectangle.style.lineHeight = '33px';
+        closeOverlayRectangle.style.color = 'brown';
+
+        closeOverlayRectangle.appendChild(closeOverlayText);
+
+        const closeOverlayCombinedElement = document.createElement('div');
+        closeOverlayCombinedElement.classList.add('combined-element');
+        closeOverlayCombinedElement.style.position = 'absolute';
+        closeOverlayCombinedElement.style.zIndex = '99999';
+        closeOverlayCombinedElement.style.top = '65px';
+
+        // Adjust the left position of the "Close Overlay" tooltip and its triangle
+        closeOverlayCombinedElement.style.left = 'calc(50% + 120px)';
+        const closeOverlayTriangle = closeOverlayRectangle.querySelector('div');
+        closeOverlayTriangle.style.left = 'calc(50% - 10px)';
+
+        closeOverlayCombinedElement.appendChild(closeOverlayRectangle);
+
+        overlay.appendChild(closeOverlayCombinedElement);
+      } else {
+        // Reset the position for the first tooltip
+        combinedElement.style.left = 'calc(50% - 218px)'; // Original left position
+      }
+    });
+
+    // Add event listener to the "Previous" button to navigate to the previous tooltip
+    button1.addEventListener('click', function () {
+      tooltipIndex = (tooltipIndex - 1 + tooltips.length) % tooltips.length; // Cycle through tooltips in reverse
+      textElement.textContent = tooltips[tooltipIndex]; // Update only the text content
+
+      if (tooltipIndex === 1) {
+        // Move the second tooltip 100px to the right
+        combinedElement.style.left = 'calc(50% - 118px)'; // Adjust the left position
+      } else if (tooltipIndex === 2) {
+        // Move the third tooltip 100px to the right
+        combinedElement.style.left = 'calc(50% - 20px)'; // Adjust the left position
+      } else if (tooltipIndex === 3) {
+        // Create a new tooltip for "Close Overlay"
+        const closeOverlayText = document.createElement('span');
+        closeOverlayText.textContent = tooltips[3]; // Text for "Close Overlay"
+
+        // Adjust the left position of the "Close Overlay" tooltip based on screen width
+        const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        if (screenWidth < 768) {
+          combinedElement.style.left = 'calc(90% - 110px)';
+        } else {
+          combinedElement.style.left = 'calc(90% - 33px)';
+        }
 
         const closeOverlayRectangle = document.createElement('div');
         closeOverlayRectangle.style.width = '220px';
