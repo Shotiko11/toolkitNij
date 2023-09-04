@@ -2,52 +2,51 @@ ul, li {
     margin: 0;
     padding: 0;
     list-style: none;
-    text-decoration: none;
-}
-
-header {
+  }
+  
+  header {
     background: linear-gradient(to bottom, #2c3e50, #34495e);
     color: #fff;
     padding: 20px 0; 
-}
-
-.navbar {
+  }
+  
+  .navbar {
     display: flex;
     justify-content: center;
-}
-
-.nav-list {
+  }
+  
+  .nav-list {
     display: flex;
     width: 100%; 
     justify-content: center;
-}
-
-.nav-item {
+  }
+  
+  .nav-item {
     margin-right: 20px;
-}
-
-.nav-item a {
+  }
+  
+  .nav-item a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s;
-}
-
-.nav-item a:hover {
+  }
+  
+  .nav-item a:hover {
     background-color: #ff4500; 
     color: #fff;
-}
-
-.hero {
+  }
+  
+  .hero {
     background-color: #3498db;
     color: #fff;
     text-align: center;
     padding: 60px 0;
-}
-
-.cta-button {
+  }
+  
+  .cta-button {
     display: inline-block;
     padding: 15px 30px;
     background-color: #e74c3c;
@@ -56,13 +55,13 @@ header {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-}
-
-.cta-button:hover {
+  }
+  
+  .cta-button:hover {
     background-color: #c0392b;
-}
-
-.custom-button {
+  }
+  
+  .custom-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #dedede;
@@ -74,13 +73,13 @@ header {
     transition: background-color 0.3s;
     color: brown;
     width: 140px;
-}
-
-.custom-button:hover {
+  }
+  
+  .custom-button:hover {
     background-color: white;
-}
-
-#overlay {
+  }
+  
+  #overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -89,19 +88,34 @@ header {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
     display: none;
-}
-
-#closeButtonWrapper {
+  }
+  
+  #closeButtonWrapper {
     position: absolute;
     top: 10px;
     right: 10px;
-}
-
-#closeOverlay {
+  }
+  
+  #closeOverlay {
     font-size: 24px; 
     background: none;
     border: none;
     cursor: pointer;
     color: white;
-}
-
+  }
+  
+  .tooltip {
+    position: absolute;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 9999;
+  }
+  
+  .tooltip-rectangle {
+    background-color: #F1EEDF;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 33px;
+    color: brown;
+  }  
