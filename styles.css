@@ -104,18 +104,4 @@ ul, li {
     color: white;
   }
   
-  .tooltip {
-    position: absolute;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 9999;
-  }
   
-  .tooltip-rectangle {
-    background-color: #F1EEDF;
-    border-radius: 10px;
-    text-align: center;
-    line-height: 33px;
-    color: brown;
-  }  

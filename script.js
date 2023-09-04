@@ -14,34 +14,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function showOverlay() {
     overlay.style.display = 'block';
-
+  
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('button-container');
-
+  
     const button1 = document.createElement('button');
     button1.textContent = 'Previous';
     button1.classList.add('custom-button');
-
+  
     const button2 = document.createElement('button');
     button2.textContent = 'Next';
     button2.classList.add('custom-button');
-
+  
     buttonContainer.appendChild(button1);
     buttonContainer.appendChild(document.createTextNode('\u00A0\u00A0'));
     buttonContainer.appendChild(button2);
-
+  
     buttonContainer.style.marginTop = '600px';
     buttonContainer.style.marginLeft = '100px';
-
+  
     overlay.appendChild(buttonContainer);
-
+  
     const combinedElement = document.createElement('div');
     combinedElement.classList.add('combined-element');
     combinedElement.style.position = 'absolute';
     combinedElement.style.zIndex = '99999';
     combinedElement.style.top = '65px';
     combinedElement.style.left = 'calc(50% - 218px)';
-
+  
     const rectangle = document.createElement('div');
     rectangle.style.width = '220px';
     rectangle.style.height = '33px';
@@ -50,8 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
     rectangle.style.textAlign = 'center';
     rectangle.style.lineHeight = '33px';
     rectangle.style.color = 'brown';
-    rectangle.textContent = tooltips[tooltipIndex]; // Display the current tooltip
-
+  
+    const textElement = document.createElement('span'); // Create a separate element for text
+    textElement.textContent = tooltips[tooltipIndex]; // Display the current tooltip
+  
     const triangle = document.createElement('div');
     triangle.style.width = '0';
     triangle.style.height = '0';
@@ -61,19 +63,21 @@ document.addEventListener('DOMContentLoaded', function () {
     triangle.style.position = 'absolute';
     triangle.style.top = '-10px';
     triangle.style.left = 'calc(50% - 10px)';
-
-    rectangle.appendChild(triangle);
-
+  
+    rectangle.appendChild(textElement); // Add the text element to the rectangle
+    rectangle.appendChild(triangle); // Add the triangle to the rectangle
+  
     combinedElement.appendChild(rectangle);
-
+  
     overlay.appendChild(combinedElement);
-
+  
     // Add event listener to the "Next" button to cycle through tooltips
     button2.addEventListener('click', function () {
       tooltipIndex = (tooltipIndex + 1) % tooltips.length; // Cycle through tooltips
-      rectangle.textContent = tooltips[tooltipIndex]; // Update the tooltip text
+      textElement.textContent = tooltips[tooltipIndex]; // Update only the text content
     });
   }
+  
 
   function hideOverlay() {
     overlay.style.display = 'none';
