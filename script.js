@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const showButtonsButton = document.getElementById('showButtons');
   const overlay = document.getElementById('overlay');
@@ -44,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
     rectangle.style.lineHeight = '33px'; 
     rectangle.style.color = 'brown'; 
     rectangle.textContent = 'This is home page'; 
-
    
     const triangle = document.createElement('div');
     triangle.style.width = '0';
