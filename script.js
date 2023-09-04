@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const tooltips = [
     'This is home page',
     'This is contact page',
-    // Add more tooltips here if needed
+    'This is about page'
   ];
 
   function showOverlay() {
@@ -79,14 +79,15 @@ document.addEventListener('DOMContentLoaded', function () {
       if (tooltipIndex === 1) {
         // Move the second tooltip 100px to the right
         combinedElement.style.left = 'calc(50% - 118px)'; // Adjust the left position
+      } else if (tooltipIndex === 2) {
+        // Move the third tooltip 100px to the right
+        combinedElement.style.left = 'calc(50% - 20px)'; // Adjust the left position
       } else {
         // Reset the position for the first tooltip
         combinedElement.style.left = 'calc(50% - 218px)'; // Original left position
       }
     });
   }
-  
-  
 
   function hideOverlay() {
     overlay.style.display = 'none';
