@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const tooltips = [
     'This is home page',
     'This is contact page',
-    'This is about page',
+    'sudfusdbfausdfudsa',
     'Close Overlay' // New tooltip
   ];
 
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Adjust the left position of the "Close Overlay" tooltip based on screen width
         const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         if (screenWidth < 768) {
-          combinedElement.style.left = 'calc(90% - 110px)';
+          combinedElement.style.left = 'calc(90% - 110px)';3
         } else {
           combinedElement.style.left = 'calc(90% - 33px)';
         }
