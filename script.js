@@ -79,7 +79,10 @@ document.addEventListener('DOMContentLoaded', function () {
       tooltipIndex = (tooltipIndex + 1) % tooltips.length; // Cycle through tooltips
       textElement.textContent = tooltips[tooltipIndex]; // Update only the text content
 
-      if (tooltipIndex === 1) {
+      if (tooltipIndex === 0) {
+        // Reset the position for the first tooltip
+        combinedElement.style.left = 'calc(50% - 218px)'; // Original left position
+      }else if (tooltipIndex === 1) {
         // Move the second tooltip 100px to the right
         combinedElement.style.left = 'calc(50% - 118px)'; // Adjust the left position
       } else if (tooltipIndex === 2) {
