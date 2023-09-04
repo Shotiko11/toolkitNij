@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let buttonsVisible = false;
 
-  let tooltipIndex = 0;
+  let tooltipIndex = 0; // Set the initial tooltip index to 0
   const tooltips = [
     'This is home page',
     'This is contact page',
