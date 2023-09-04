@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
     combinedElement.style.position = 'absolute';
     combinedElement.style.zIndex = '99999';
     combinedElement.style.top = '65px';
-    combinedElement.style.left = 'calc(50% - 218px)';
   
     const rectangle = document.createElement('div');
     rectangle.style.width = '220px';
@@ -69,14 +68,24 @@ document.addEventListener('DOMContentLoaded', function () {
   
     combinedElement.appendChild(rectangle);
   
+    overlay.appendChild(buttonContainer);
     overlay.appendChild(combinedElement);
   
     // Add event listener to the "Next" button to cycle through tooltips
     button2.addEventListener('click', function () {
       tooltipIndex = (tooltipIndex + 1) % tooltips.length; // Cycle through tooltips
       textElement.textContent = tooltips[tooltipIndex]; // Update only the text content
+  
+      if (tooltipIndex === 1) {
+        // Move the second tooltip 100px to the right
+        combinedElement.style.left = 'calc(50% - 118px)'; // Adjust the left position
+      } else {
+        // Reset the position for the first tooltip
+        combinedElement.style.left = 'calc(50% - 218px)'; // Original left position
+      }
     });
   }
+  
   
 
   function hideOverlay() {
