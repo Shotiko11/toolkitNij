@@ -97,11 +97,12 @@ ul, li {
   }
   
   #closeOverlay {
-    font-size: 40px; 
+    font-size: 60px; 
     background: none;
     border: none;
     cursor: pointer;
     color: white;
+    margin-right: 30px;
   }
   
   

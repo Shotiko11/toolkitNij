@@ -156,8 +156,8 @@ class TooltipOverlay {
       combinedElement.style.left = 'calc(50% - 20px)';
       combinedElement.style.transform = 'none';
     } else if (this.tooltipIndex === 3) {
-      combinedElement.style.left = 'calc(90% - 33px)';
-      combinedElement.style.transform = 'rotate(45deg)';
+      combinedElement.style.left = 'calc(90% - 20px)';
+      combinedElement.style.transform = 'rotate(35deg)';
       
       // Remove the closeOverlayCombinedElement to avoid rotation on other tooltips
       const closeOverlayCombinedElement = this.overlay.querySelector('.close-overlay-element');
