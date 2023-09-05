@@ -111,7 +111,7 @@ class TooltipOverlay {
     combinedElement.classList.add('combined-element');
     combinedElement.style.position = 'absolute';
     combinedElement.style.zIndex = '99999';
-    combinedElement.style.top = '65px';
+    combinedElement.style.top = '57px';
 
     const text = this.tooltips[this.tooltipIndex];
     const rectangle = new Tooltip(text, '#F1EEDF').create();
@@ -160,15 +160,19 @@ class TooltipOverlay {
     if (this.tooltipIndex === 0) {
       combinedElement.style.left = 'calc(50% - 218px)';
       combinedElement.style.transform = 'none';
+      combinedElement.style.top = '57px';
     } else if (this.tooltipIndex === 1) {
       combinedElement.style.left = 'calc(50% - 118px)';
       combinedElement.style.transform = 'none';
+      combinedElement.style.top = '57px';
     } else if (this.tooltipIndex === 2) {
       combinedElement.style.left = 'calc(50% - 20px)';
       combinedElement.style.transform = 'none';
+      combinedElement.style.top = '57px';
     } else if (this.tooltipIndex === 3) {
       combinedElement.style.left = 'calc(90% - 20px)';
       combinedElement.style.transform = 'rotate(35deg)';
+      combinedElement.style.top = '70px';
       
       const closeOverlayCombinedElement = this.overlay.querySelector('.close-overlay-element');
       if (closeOverlayCombinedElement) {
@@ -185,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const tooltips = [
     'This is home page',
     'This is contact page',
-    'sudfusdbfausdfudsa',
+    'This is About page',
     'Close Overlay',
   ];
 
