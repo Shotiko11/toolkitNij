@@ -111,7 +111,6 @@ class TooltipOverlay {
     combinedElement.classList.add('combined-element');
     combinedElement.style.position = 'absolute';
     combinedElement.style.zIndex = '99999';
-    combinedElement.style.top = '57px';
 
     const text = this.tooltips[this.tooltipIndex];
     const rectangle = new Tooltip(text, '#F1EEDF').create();
@@ -201,6 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (tooltipOverlay.buttonsVisible) {
       tooltipOverlay.hide();
     } else {
+      tooltipOverlay.tooltipIndex = 0;
       tooltipOverlay.show();
     }
 
