@@ -131,7 +131,7 @@ class TooltipOverlay {
     });
 
     button1.addEventListener('click', () => {
-      if(this.tooltipIndex === 0){
+      if (this.tooltipIndex === 0) {
         return;
       }
       this.tooltipIndex = (this.tooltipIndex - 1 + this.tooltips.length) % this.tooltips.length;
