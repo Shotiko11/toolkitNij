@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 ul, li {
     margin: 0;
     padding: 0;
@@ -104,5 +109,69 @@ ul, li {
     color: white;
     margin-right: 30px;
   }
+
+  .button-container {
+    margin-top: 600px;
+    margin-left: 100px;
+  }
   
+  .custom-button {
+    /* Add button styles here */
+  }
   
+  .combined-element {
+    position: absolute;
+    z-index: 99999;
+    top: 65px;
+    width: 220px;
+    height: 33px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 33px;
+    color: brown;
+  }
+  
+  .combined-element span {
+    /* Add text styles here */
+  }
+  
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #F1EEDF;
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 10px);
+  }
+  
+  .close-overlay-element {
+    position: absolute;
+    top: 65px;
+    width: 220px;
+    height: 33px;
+    background-color: #F1EEDF;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 33px;
+    color: brown;
+    left: calc(90% - 20px);
+    transform: rotate(35deg);
+  }
+  
+  .Escape {
+    color: white;
+    font-size: 40px;
+  }
+
+  h1.Escape span {
+    color: black;
+    text-decoration: underline black;
+    text-decoration-style: dashed;
+    display: inline-block;
+    padding-bottom: 2px;    
+    font-size: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }

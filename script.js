@@ -58,6 +58,12 @@ class TooltipOverlay {
         this.hide();
       }
     });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        this.hide();
+      }
+    });
   }
 
   hide() {
@@ -115,7 +121,6 @@ class TooltipOverlay {
     combinedElement.appendChild(triangle);
 
     if (this.tooltipIndex === 3) {
-      // Set the position for the "Close Overlay" tooltip
       combinedElement.style.left = 'calc(90% - 33px)';
     } else {
       combinedElement.style.left = 'calc(50% - 218px)';
@@ -165,13 +170,11 @@ class TooltipOverlay {
       combinedElement.style.left = 'calc(90% - 20px)';
       combinedElement.style.transform = 'rotate(35deg)';
       
-      // Remove the closeOverlayCombinedElement to avoid rotation on other tooltips
       const closeOverlayCombinedElement = this.overlay.querySelector('.close-overlay-element');
       if (closeOverlayCombinedElement) {
         this.overlay.removeChild(closeOverlayCombinedElement);
       }
     } else {
-      // Reset the position and rotation to the default when not showing the "sudfusdbfausdfudsa" or "Close Overlay" tooltip
       combinedElement.style.left = 'calc(50% - 218px)';
       combinedElement.style.transform = 'none';
     }
