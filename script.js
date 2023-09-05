@@ -52,6 +52,12 @@ class TooltipOverlay {
     this.createCombinedElement();
 
     this.attachEventListeners();
+
+    this.overlay.addEventListener('click', (event) => {
+      if (event.target === this.overlay) {
+        this.hide();
+      }
+    });
   }
 
   hide() {
