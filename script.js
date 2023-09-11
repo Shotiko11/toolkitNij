@@ -133,17 +133,13 @@ class TooltipOverlay {
     const button2 = document.querySelector('.button-container button:last-child');
 
     button2.addEventListener('click', () => {
-      if (this.tooltipIndex === 3) {
-        return;
-      }
+      if (this.tooltipIndex === 3)  return;
       this.tooltipIndex = (this.tooltipIndex + 1) % this.tooltips.length;
       this.updateTooltip();
     });
 
     button1.addEventListener('click', () => {
-      if (this.tooltipIndex === 0) {
-        return;
-      }
+      if (this.tooltipIndex === 0) return;
       this.tooltipIndex = (this.tooltipIndex - 1 + this.tooltips.length) % this.tooltips.length;
       this.updateTooltip();
     });
