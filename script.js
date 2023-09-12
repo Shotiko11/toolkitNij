@@ -3,7 +3,6 @@ class Tooltip {
     this.text = text;
     this.backgroundColor = backgroundColor;
   }
-
   create() {
     const element = document.createElement('div');
     element.style = `width:220px;height:33px;background-color:${this.backgroundColor};border-radius:10px;text-align:center;line-height:33px;color:brown;`;
@@ -61,11 +60,11 @@ class TooltipOverlay {
   }
 
   createButton(text) {
-    const button = document.createElement('button');
-    button.textContent = text;
-    button.classList.add('custom-button');
-    return button;
-  }
+    return Object.assign(document.createElement('button'), {
+      textContent: text,
+      className: 'custom-button'
+    });
+  }  
 
   createCombinedElement() {
     const text = this.tooltips[this.tooltipIndex];
@@ -82,7 +81,6 @@ class TooltipOverlay {
     combinedElement.style.left = this.tooltipIndex === 3 ? 'calc(90% - 33px)' : 'calc(50% - 218px)';
     this.overlay.appendChild(combinedElement);
   }
-  
 
   attachEventListeners() {
     const button1 = document.querySelector('.button-container button:first-child');
@@ -106,10 +104,7 @@ class TooltipOverlay {
     textElement.textContent = this.tooltips[this.tooltipIndex];
     const combinedElement = this.overlay.querySelector('.combined-element');
     const positions = [
-      ['calc(50% - 218px)', 'none', '57px'],
-      ['calc(50% - 118px)', 'none', '57px'],
-      ['calc(50% - 20px)', 'none', '57px'],
-      ['calc(90% - 20px)', 'rotate(35deg)', '70px']
+      ['calc(50% - 218px)', 'none', '57px'], ['calc(50% - 118px)', 'none', '57px'], ['calc(50% - 20px)', 'none', '57px'], ['calc(90% - 20px)', 'rotate(35deg)', '70px']
     ];
   
     const [left, transform, top] = positions[this.tooltipIndex] || positions[0];
