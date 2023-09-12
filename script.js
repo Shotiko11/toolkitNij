@@ -68,21 +68,21 @@ class TooltipOverlay {
   }
 
   createCombinedElement() {
+    const text = this.tooltips[this.tooltipIndex];
     const combinedElement = document.createElement('div');
     combinedElement.classList.add('combined-element');
     combinedElement.style.position = 'absolute';
     combinedElement.style.zIndex = '99999';
-
-    const text = this.tooltips[this.tooltipIndex];
+  
     const rectangle = new Tooltip(text, '#F1EEDF').create();
     const triangle = new Triangle().create();
-
+  
     combinedElement.appendChild(rectangle);
     combinedElement.appendChild(triangle);
-
-    if (this.tooltipIndex === 3) combinedElement.style.left = 'calc(90% - 33px)'; else combinedElement.style.left = 'calc(50% - 218px)';
+    combinedElement.style.left = this.tooltipIndex === 3 ? 'calc(90% - 33px)' : 'calc(50% - 218px)';
     this.overlay.appendChild(combinedElement);
   }
+  
 
   attachEventListeners() {
     const button1 = document.querySelector('.button-container button:first-child');
@@ -104,7 +104,6 @@ class TooltipOverlay {
   updateTooltip() {
     const textElement = this.overlay.querySelector('.combined-element span');
     textElement.textContent = this.tooltips[this.tooltipIndex];
-    
     const combinedElement = this.overlay.querySelector('.combined-element');
     const positions = [
       ['calc(50% - 218px)', 'none', '57px'],
