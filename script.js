@@ -32,14 +32,9 @@ class TooltipOverlay {
     this.createButtonContainer();
     this.createCombinedElement();
     this.attachEventListeners();
-    this.overlay.addEventListener('click', (event) => {
-      if (event.target === this.overlay) this.hide()
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') this.hide();
-    });
-  }
+    this.overlay.addEventListener('click', e => e.target === this.overlay && this.hide());
+    document.addEventListener('keydown', e => e.key === 'Escape' && this.hide());
+  }  
 
   hide() {
     this.overlay.style.display = 'none';
