@@ -104,33 +104,26 @@ class TooltipOverlay {
   updateTooltip() {
     const textElement = this.overlay.querySelector('.combined-element span');
     textElement.textContent = this.tooltips[this.tooltipIndex];
+    
     const combinedElement = this.overlay.querySelector('.combined-element');
-    if (this.tooltipIndex === 0) {
-      combinedElement.style.left = 'calc(50% - 218px)';
-      combinedElement.style.transform = 'none';
-      combinedElement.style.top = '57px';
-    } else if (this.tooltipIndex === 1) {
-      combinedElement.style.left = 'calc(50% - 118px)';
-      combinedElement.style.transform = 'none';
-      combinedElement.style.top = '57px';
-    } else if (this.tooltipIndex === 2) {
-      combinedElement.style.left = 'calc(50% - 20px)';
-      combinedElement.style.transform = 'none';
-      combinedElement.style.top = '57px';
-    } else if (this.tooltipIndex === 3) {
-      combinedElement.style.left = 'calc(90% - 20px)';
-      combinedElement.style.transform = 'rotate(35deg)';
-      combinedElement.style.top = '70px';
-      
-      const closeOverlayCombinedElement = this.overlay.querySelector('.close-overlay-element');
-      if (closeOverlayCombinedElement) {
-        this.overlay.removeChild(closeOverlayCombinedElement);
-      }
-    } else {
-      combinedElement.style.left = 'calc(50% - 218px)';
-      combinedElement.style.transform = 'none';
+    const positions = [
+      ['calc(50% - 218px)', 'none', '57px'],
+      ['calc(50% - 118px)', 'none', '57px'],
+      ['calc(50% - 20px)', 'none', '57px'],
+      ['calc(90% - 20px)', 'rotate(35deg)', '70px']
+    ];
+  
+    const [left, transform, top] = positions[this.tooltipIndex] || positions[0];
+    
+    combinedElement.style.left = left;
+    combinedElement.style.transform = transform;
+    combinedElement.style.top = top;
+  
+    const closeOverlayCombinedElement = this.overlay.querySelector('.close-overlay-element');
+    if (closeOverlayCombinedElement) {
+      this.overlay.removeChild(closeOverlayCombinedElement);
     }
-  }
+  }  
 }
 
 document.addEventListener('DOMContentLoaded', function () {
