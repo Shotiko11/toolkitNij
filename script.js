@@ -6,33 +6,15 @@ class Tooltip {
 
   create() {
     const element = document.createElement('div');
-    element.style.width = '220px';
-    element.style.height = '33px';
-    element.style.backgroundColor = this.backgroundColor;
-    element.style.borderRadius = '10px';
-    element.style.textAlign = 'center';
-    element.style.lineHeight = '33px';
-    element.style.color = 'brown';
-
-    const textElement = document.createElement('span');
-    textElement.textContent = this.text;
-
-    element.appendChild(textElement);
+    element.style = `width:220px;height:33px;background-color:${this.backgroundColor};border-radius:10px;text-align:center;line-height:33px;color:brown;`;
+    element.innerHTML = `<span>${this.text}</span>`;
     return element;
   }
 }
-
 class Triangle {
   create() {
     const triangle = document.createElement('div');
-    triangle.style.width = '0';
-    triangle.style.height = '0';
-    triangle.style.borderLeft = '10px solid transparent';
-    triangle.style.borderRight = '10px solid transparent';
-    triangle.style.borderBottom = '10px solid #F1EEDF';
-    triangle.style.position = 'absolute';
-    triangle.style.top = '-10px';
-    triangle.style.left = 'calc(50% - 10px)';
+    triangle.style.cssText = 'width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid #F1EEDF;position:absolute;top:-10px;left:calc(50% - 10px);';
     return triangle;
   }
 }
@@ -47,40 +29,24 @@ class TooltipOverlay {
 
   show() {
     this.overlay.style.display = 'block';
-
     this.createButtonContainer();
     this.createCombinedElement();
-
     this.attachEventListeners();
-
     this.overlay.addEventListener('click', (event) => {
-      if (event.target === this.overlay) {
-        this.hide();
-      }
+      if (event.target === this.overlay) this.hide()
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        this.hide();
-      }
+      if (event.key === 'Escape') this.hide();
     });
   }
 
   hide() {
     this.overlay.style.display = 'none';
-
-    const buttonContainer = this.overlay.querySelector('.button-container');
-    if (buttonContainer) {
-      this.overlay.removeChild(buttonContainer);
-    }
-
-    const combinedElement = this.overlay.querySelector('.combined-element');
-    if (combinedElement) {
-      this.overlay.removeChild(combinedElement);
-    }
-
+    this.overlay.querySelector('.button-container')?.remove();
+    this.overlay.querySelector('.combined-element')?.remove();
     this.buttonsVisible = false;
-  }
+  }  
 
   createButtonContainer() {
     const buttonContainer = document.createElement('div');
@@ -119,12 +85,7 @@ class TooltipOverlay {
     combinedElement.appendChild(rectangle);
     combinedElement.appendChild(triangle);
 
-    if (this.tooltipIndex === 3) {
-      combinedElement.style.left = 'calc(90% - 33px)';
-    } else {
-      combinedElement.style.left = 'calc(50% - 218px)';
-    }
-
+    if (this.tooltipIndex === 3) combinedElement.style.left = 'calc(90% - 33px)'; else combinedElement.style.left = 'calc(50% - 218px)';
     this.overlay.appendChild(combinedElement);
   }
 
@@ -144,14 +105,11 @@ class TooltipOverlay {
       this.updateTooltip();
     });
   }
-
   
   updateTooltip() {
     const textElement = this.overlay.querySelector('.combined-element span');
     textElement.textContent = this.tooltips[this.tooltipIndex];
-    
     const combinedElement = this.overlay.querySelector('.combined-element');
-
     if (this.tooltipIndex === 0) {
       combinedElement.style.left = 'calc(50% - 218px)';
       combinedElement.style.transform = 'none';
@@ -187,22 +145,12 @@ document.addEventListener('DOMContentLoaded', function () {
     'This is About page',
     'Close Overlay',
   ];
-
   const tooltipOverlay = new TooltipOverlay('overlay', tooltips);
   const showButtonsButton = document.getElementById('showButtons');
   const closeOverlayButton = document.getElementById('closeOverlay');
-
   showButtonsButton.addEventListener('click', function () {
-    if (tooltipOverlay.buttonsVisible) {
-      tooltipOverlay.hide();
-    } else {
-      tooltipOverlay.tooltipIndex = 0;
-      tooltipOverlay.show();
-    }
-
-    tooltipOverlay.buttonsVisible = !tooltipOverlay.buttonsVisible;
+    if (tooltipOverlay.buttonsVisible) tooltipOverlay.hide(); else tooltipOverlay.tooltipIndex = 0; tooltipOverlay.show(); tooltipOverlay.buttonsVisible = !tooltipOverlay.buttonsVisible;
   });
-
   closeOverlayButton.addEventListener('click', function () {
     tooltipOverlay.hide();
   });
